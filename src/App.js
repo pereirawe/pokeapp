@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/images/logo.svg';
+import './assets/css/App.css';
+
+import Users from './components/Users'
+
+function getUser(intId = 0){
+  var user = []
+  user.name = "William Enrique"
+  user.surname = "Pereira Carrasquero"
+  user.age = 32
+  user.country = "Venezuela"
+  user.childs = [ 'William', 'Jared', 'Jacob']
+  return user;
+}
+
+function renderUser(){
+  var user = getUser();
+  var renderUser = (
+    <div className="User">
+      <h2>
+        {user.name} {user.surname}
+      </h2>
+      <small>From {user.country}</small>
+      <p>I'm {user.age} years old.</p>
+      <ul>
+        {
+          user.childs.map((child , i) => {
+            return(
+              <li key={i}>
+                {child}
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
+  return renderUser;
+}
 
 function App() {
-  return (
+  var user = renderUser();
+  var app = (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {user}
       </header>
+      <section className="components">
+        <Users />
+      </section>
     </div>
-  );
+  )
+  return app;
 }
 
 export default App;
