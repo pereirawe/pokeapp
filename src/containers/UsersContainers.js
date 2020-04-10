@@ -6,7 +6,7 @@ class Users extends Component{
     state = {};
     render(){
         return <UserComponent
-            name={user.name}
+            name={'William'}
             country={'Venezuela'}
         />;
     }
