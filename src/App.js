@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
-import Users from './components/Users'
+import Users from './containers/UsersContainers'
 
 function getUser(intId = 0){
   var user = []
