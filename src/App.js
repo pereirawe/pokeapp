@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
-import Users from './containers/UsersContainer'
+// import Users from './containers/UsersContainer'
+import ProductContainer from "./containers/ProductContainer";
 
 function getUser(intId = 0){
   var user = []
@@ -48,7 +49,11 @@ function App() {
         {user}
       </header>
       <section className="components">
-        <Users />
+        {/* <Users /> */}
+      </section>
+
+      <section>
+        <ProductContainer />
       </section>
     </div>
   )
