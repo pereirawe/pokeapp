@@ -1,14 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, {Fragment} from 'react';
 
-const List = () => {
+function List( {pokedata} ) {
     return(
-        <div>
+        <Fragment>
             <h2>Lista de Pokemones</h2>
-            <Link to='../'>
-                Home
-            </Link>
-        </div>
+            <ul>
+                { pokedata.map( (pokemon, index) => {
+                    return (
+                        <li key={index}>
+                            {pokemon.name} - <a href={pokemon.url}>URL</a> 
+                            <pre></pre>
+                        </li>
+                    )
+                }) }
+            </ul>
+        </Fragment>
     )
 }
 
