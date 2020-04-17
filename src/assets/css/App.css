@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #F5E551;
-  background-image:  url('../images/image_wall_2.png');
+  /* background-image:  url('../images/image_wall_2.png'); */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
